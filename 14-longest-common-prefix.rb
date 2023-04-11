@@ -1,40 +1,21 @@
 # @param {String[]} strs
-# @return String
-def get_shortest_word(strs)
-  shortest = ""
-  shortest_len = 10000;
-  for str in strs
-    if str.length < shortest_len then
-      shortest = str
-      shortest_len = str.length
-    end
-  end
-  return shortest
-end
-
-# @param {String[]} strs
 # @return {String}
 def longest_common_prefix(strs)
-  shortest = get_shortest_word(strs)
-  strs.delete(shortest)
-  prefix_len = 0
-  for i in 0..shortest.length do
+  for i in 0..200 do
     matches = true
     for str in strs
-      if str[i] != shortest[i] then
+      if str[i] != strs[0][i] then
         matches = false
         break
       end
     end
-    if matches then
-      prefix_len += 1
-    else
+    if not matches then
       break
     end
   end
 
-  if prefix_len > 0 then
-    prefix = shortest[0..prefix_len-1]
+  if i > 0 then
+    prefix = strs[0][0..i-1]
   else
     prefix = ""
   end
@@ -43,3 +24,4 @@ end
 
 puts longest_common_prefix(["flower", "flow", "flight"])
 puts longest_common_prefix(["dog", "racecar", "car"])
+puts longest_common_prefix(["dog", "dogeball"])
