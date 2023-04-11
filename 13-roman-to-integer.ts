@@ -1,31 +1,19 @@
-function getValueOfSymbol(c: string): number {
-    switch (c) { // NOTE: My C brain kicked in, should have used a dictionary lol
-        case "I":
-            return 1;
-        case "V":
-            return 5;
-        case "X":
-            return 10;
-        case "L":
-            return 50;
-        case "C":
-            return 100;
-        case "D":
-            return 500;
-        case "M":
-            return 1000;
-        default:
-            console.error(`Unknown symbol ${c} (len ${c.length})`);
-            return 0;
-    }
-}
+const _symbolValues = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+};
 
 function romanToInt(s: string): number {
     let result = 0;
     for (let i = 0; i < s.length; i++) {
-        let val = getValueOfSymbol(s.charAt(i));
+        let val = _symbolValues[s.charAt(i)];
         if (i < s.length - 1) {
-            let valNext = getValueOfSymbol(s.charAt(i + 1));
+            let valNext = _symbolValues[s.charAt(i + 1)];
             if (valNext > val) {
                 result += valNext - val;
                 i++;
@@ -39,11 +27,14 @@ function romanToInt(s: string): number {
     return result;
 }
 
-// TODO: Unit test
-console.log(romanToInt("III"));
-console.log(romanToInt("IV"));
-console.log(romanToInt("V"));
-console.log(romanToInt("IX"));
-console.log(romanToInt("X"));
-console.log(romanToInt("DXXVII"));
-console.log(romanToInt("XXVII"));
+function testRomanToInt() {
+    console.assert(romanToInt("III") === 3);
+    console.assert(romanToInt("IV") === 4);
+    console.assert(romanToInt("V") === 5);
+    console.assert(romanToInt("IX") === 9);
+    console.assert(romanToInt("X") === 10);
+    console.assert(romanToInt("DXXVII") === 527);
+    console.assert(romanToInt("XXVII") === 27);
+}
+
+testRomanToInt();
