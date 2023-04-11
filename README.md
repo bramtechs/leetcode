@@ -7,11 +7,18 @@ _"I want to get hired at a FANG company, buy a Macbook and drink Caffè Lattes a
 
 ## Running
 
-### C/C++
+### C
 _Example:_
 
 ```console
 gcc -O3 1-two-sum.c && ./a.out && rm ./a.out
+```
+
+### C++
+_Example:_
+
+```console
+g++ -O3 218-skyline-problem.cpp && ./a.out && rm ./a.out
 ```
 
 ### Typescript/Javascript
