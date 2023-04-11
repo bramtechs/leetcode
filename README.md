@@ -7,9 +7,16 @@ _"I want to get hired at a FANG company, buy a Macbook and drink Caffè Lattes a
 
 ## Running
 
+### C/C++
+_Example:_
+
+```console
+gcc -O3 1-two-sum.c && ./a.out && rm ./a.out
+```
+
 ### Typescript/Javascript
 
-I use [bun](https://bun.sh/) to run my Typescript/Javascript files.
+I use [bun](https://bun.sh/) to run my Typescript and Javascript files. It's easy to use and ***blazingly fast***.
 
 _Example:_
 
