@@ -21,6 +21,13 @@ _Example:_
 g++ -O3 218-skyline-problem.cpp && ./a.out && rm ./a.out
 ```
 
+### Java
+_Example:_
+
+```console
+bash ./2-add-two-numbers/run
+```
+
 ### Typescript/Javascript
 
 I use [bun](https://bun.sh/) to run my Typescript and Javascript files. It's easy to use and ***blazingly fast***.
